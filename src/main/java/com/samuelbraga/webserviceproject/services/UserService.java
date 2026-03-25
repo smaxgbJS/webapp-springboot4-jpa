@@ -1,4 +1,4 @@
-package com.samuelbraga.webserviceproject.Service;
+package com.samuelbraga.webserviceproject.services;
 
 import com.samuelbraga.webserviceproject.entities.User;
 import com.samuelbraga.webserviceproject.repositories.UserRepository;

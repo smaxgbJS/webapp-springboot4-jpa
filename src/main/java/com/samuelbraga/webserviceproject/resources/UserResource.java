@@ -1,6 +1,6 @@
 package com.samuelbraga.webserviceproject.resources;
 
-import com.samuelbraga.webserviceproject.Service.UserService;
+import com.samuelbraga.webserviceproject.services.UserService;
 import com.samuelbraga.webserviceproject.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
