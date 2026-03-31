@@ -2,6 +2,7 @@ package com.samuelbraga.webserviceproject.services;
 
 import com.samuelbraga.webserviceproject.entities.Product;
 import com.samuelbraga.webserviceproject.repositories.ProductRepository;
+import com.samuelbraga.webserviceproject.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,6 @@ public class ProductService {
     }
 
     public Product findById(Long id) {
-        return productRepository.findById(id).orElse(null);
+        return productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
     }
 }

@@ -2,6 +2,7 @@ package com.samuelbraga.webserviceproject.services;
 
 import com.samuelbraga.webserviceproject.entities.User;
 import com.samuelbraga.webserviceproject.repositories.UserRepository;
+import com.samuelbraga.webserviceproject.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class UserService {
 
     public User findById(Long userId) {
        return userRepository.findById(userId)
-           .orElseThrow(() -> new RuntimeException("User not found"));
+           .orElseThrow(() -> new ResourceNotFoundException(userId));
     }
 
     public User save(User user) {

@@ -2,6 +2,7 @@ package com.samuelbraga.webserviceproject.services;
 
 import com.samuelbraga.webserviceproject.entities.Category;
 import com.samuelbraga.webserviceproject.repositories.CategoryRepository;
+import com.samuelbraga.webserviceproject.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,6 @@ public class CategoryService {
     }
 
     public Category findById(Long id) {
-        return categoryRepository.findById(id).orElse(null);
+        return categoryRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
     }
 }
